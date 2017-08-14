@@ -79,6 +79,7 @@ function hide_shipping_when_free_is_available( $rates, $package ) {
 	return $rates;
 }
 
+
 /* Add user role description before order on my account page */
 add_action( 'woocommerce_before_my_account', 'add_content_before_myaccount_order' );
 function add_content_before_myaccount_order() {
@@ -129,6 +130,7 @@ function tnc_add_field_to_registration(){
 }
 add_action( 'woocommerce_register_form', 'tnc_add_field_to_registration' );
 
+
 /* Validate terms and condition selected checkbox */
 function tnc_validation_registration( $errors, $username, $password, $email ){
     if ( empty( $_POST['terms'] ) ) {
@@ -137,6 +139,7 @@ function tnc_validation_registration( $errors, $username, $password, $email ){
     return $errors;
 }
 add_action( 'woocommerce_process_registration_errors', 'tnc_validation_registration', 10, 4 );
+
 
 /* Remove query version strings for faster web performance */
 function _remove_script_version( $src ){
